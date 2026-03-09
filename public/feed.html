@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FLUX</title>
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+  <header>
+    <h1>FLUX</h1>
+    <button onclick="window.location.href='profile.html'">Mein Profil</button>
+    <button id="logoutBtn">Logout <img src="images/logout1.png" alt="logout" class="outImg"></button>
+  </header>
+
+  <section id="postSection">
+    <form id="postForm" enctype="multipart/form-data">
+  <textarea name="content" id="postInput" placeholder="Was möchtest du posten?"></textarea>
+  <input type="file" name="image" id="postImage" accept="image/*">
+  <button type="submit">Posten</button>
+</form>
+<!-- <div id="postsContainer"></div> -->
+
+  </section>
+
+  <section id="feedSection">
+  <h2>Feed</h2>
+  <div class="feed-toggle">
+    <button id="allFeedBtn">Alle Posts</button>
+    <button id="followingFeedBtn">Folge ich</button>
+  </div>
+  <div id="feed"></div>
+</section>
+
+
+
+<script src="js/feed.js"></script>
+</body>
+</html>

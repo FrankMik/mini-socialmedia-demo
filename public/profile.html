@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profil - FLUX</title>
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+<header>
+  <h1>FLUX</h1>
+  <button id="logoutBtn">Logout <img src="images/logout1.png" alt="logout" class="outImg"></button>
+</header>
+
+<section class="profile-card">
+  <img src="./images/avatar.jpg" alt="Avatar" class="avatar-large" id="profileAvatar">
+  <h2 id="username">Username</h2>
+  <p id="bio">Bio</p>
+
+  <form id="updateProfileForm" enctype="multipart/form-data">
+    <label for="avatar">Avatar ändern:</label>
+    <input type="file" id="avatar" name="avatar" accept="image/*">
+
+    <label for="bioInput">Bio:</label>
+    <textarea id="bioInput" name="bio" placeholder="Schreibe etwas über dich..."></textarea>
+
+    <button type="submit">Profil aktualisieren</button>
+  </form>
+  <div></div>
+  <a href="feed.html">
+  <button type="button">To Feed</button></a>
+</section>
+
+<script src="js/profile.js"></script>
+</body>
+</html>

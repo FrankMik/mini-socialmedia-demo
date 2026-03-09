@@ -1,0 +1,372 @@
+/* 1. GRUNDLAYOUT & GLOBAL */
+body {
+    background-color: #1e1e1e;
+    color: #e0e0e0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 20px;
+    padding: 0;
+}
+
+/* Icons / Bilder Korrekturen */
+.outImg {
+    color: #00ff7f;
+    height: 15px;
+    margin: 3px 0 0 3px;
+    padding: 0;
+}
+
+.likeImg {
+    height: 15px;
+    margin: 3px 0 0 0;
+    padding: 0;
+}
+
+/* 2. HEADER & NAVIGATION */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background-color: #121212;
+    border-bottom: 2px solid #00ff7f;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 1.8em;
+}
+
+header button {
+    background-color: #121212;
+    border: 2px solid #00ff7f;
+    color: #00ff7f;
+    padding: 5px 15px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+header button:hover {
+    background-color: #00ff7f;
+    color: #121212;
+}
+
+/* Feed-Umschalter (Tabs) */
+.feed-toggle {
+    display: flex;
+    gap: 16px;
+    margin: 24px 0;
+}
+
+.feed-toggle button {
+    background: transparent;
+    border: 2px solid #00ff7f;
+    color: #00ff7f;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.feed-toggle button.active {
+    background: #00ff7f;
+    color: white;
+}
+
+.feed-toggle button:hover:not(.active) {
+    background: rgba(0, 255, 127, 0.1);
+}
+
+/* 3. POST FORMULAR (ERSTELLEN) */
+#postSection {
+    padding: 20px 30px;
+}
+
+#postForm textarea {
+    width: 100%;
+    padding: 10px;
+    background-color: #2a2a2a;
+    border: 1px solid #333;
+    color: #e0e0e0;
+    font-size: 1em;
+    resize: vertical;
+    min-height: 60px;
+    border-radius: 6px;
+}
+
+#postForm button {
+    margin-top: 10px;
+    background-color: #121212;
+    border: 2px solid #00ff7f;
+    color: #00ff7f;
+    padding: 5px 15px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+#postForm button:hover {
+    background-color: #00ff7f;
+    color: #121212;
+}
+
+/* 4. FEED & POSTS */
+#feedSection {
+    padding: 20px 30px;
+}
+
+.post {
+    background-color: #2a2a2a;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 20px;
+    box-shadow: 0 0 10px rgba(0, 255, 127, 0.2);
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+}
+
+.post:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 20px rgba(0, 255, 127, 0.5);
+    border: 1px solid #00ff7f;
+}
+
+.post-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    gap: 10px;
+}
+
+.post-header .avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 2px solid #00ff7f;
+    transition: all 0.3s ease;
+}
+
+.post-header .avatar:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 12px #00ff7f;
+}
+
+.post-content {
+    margin: 10px 0;
+    line-height: 1.4;
+}
+
+.post-image {
+    max-width: 100%;
+    max-height: 400px;
+    border-radius: 8px;
+    margin: 10px 0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* Follow-Button */
+.followBtn {
+    background: linear-gradient(45deg, #10b981, #059669);
+    color: white !important;
+    border: none;
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    margin-left: 12px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-transform: uppercase;
+}
+
+.followBtn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(16, 185, 129, 0.4);
+}
+
+/* Post Actions (Like) */
+.post-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.likeBtn {
+    background-color: #121212;
+    border: 2px solid #00ff7f;
+    color: #00ff7f;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all 0.2s ease;
+}
+
+.likeBtn:hover {
+    background-color: #00ff7f;
+    color: #121212;
+    transform: scale(1.05);
+    box-shadow: 0 0 8px #00ff7f;
+}
+
+/* 5. KOMMENTAR-SYSTEM */
+.comments {
+    margin-top: 10px;
+    border-top: 1px solid #333;
+    padding-top: 15px;
+}
+
+.commentForm {
+    margin-top: 10px;
+    display: flex;
+    gap: 10px;
+}
+
+.commentForm input[type="text"] {
+    flex: 1;
+    padding: 8px;
+    border-radius: 6px;
+    border: 1px solid #333;
+    background-color: #1e1e1e;
+    color: #e0e0e0;
+}
+
+.commentForm button {
+    background-color: #121212;
+    border: 2px solid #00ff7f;
+    color: #00ff7f;
+    padding: 5px 15px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.commentForm button:hover {
+    background-color: #00ff7f;
+    color: #121212;
+    box-shadow: 0 0 8px #00ff7f;
+}
+
+/* Verschachtelung & Liste */
+.comment-list {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+.comment-item {
+    margin-top: 12px;
+    margin-left: 10px;
+    border-left: 1px solid #444;
+    padding-left: 12px;
+}
+
+.comment {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.comment .avatar-small {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 2px solid #00ff7f;
+}
+
+.comment-meta {
+    margin-top: 4px;
+    margin-left: 38px;
+}
+
+.replyBtn {
+    border: none;
+    background: none;
+    padding: 0;
+    cursor: pointer;
+    color: #00ff7f;
+    font-size: 0.8rem;
+    font-weight: bold;
+    opacity: 0.7;
+    transition: all 0.2s ease;
+}
+
+.replyBtn:hover {
+    opacity: 1;
+    text-shadow: 0 0 5px #00ff7f;
+}
+
+/* Antwort-Formular (Reply) */
+.replyForm {
+    margin-top: 10px;
+    margin-left: 38px;
+    display: flex;
+    gap: 8px;
+    background-color: rgba(0, 255, 127, 0.05);
+    padding: 8px;
+    border-radius: 8px;
+    border: 1px solid rgba(0, 255, 127, 0.2);
+}
+
+.inline-reply-input {
+    flex: 1;
+    padding: 6px 10px;
+    border-radius: 6px;
+    border: 1px solid #333;
+    background-color: #1a1a1a;
+    color: #e0e0e0;
+    font-size: 0.85rem;
+    outline: none;
+}
+
+.replySendBtn {
+    background-color: #121212;
+    border: 2px solid #00ff7f;
+    color: #00ff7f;
+    padding: 4px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.8rem;
+    transition: all 0.2s ease;
+}
+
+.replySendBtn:hover {
+    background-color: #00ff7f;
+    color: #121212;
+    box-shadow: 0 0 8px #00ff7f;
+}
+
+  /* 6. PROFILSEITE */
+
+.profile-card {
+    background: #1a1a1a;
+    border: 1px solid rgba(0, 255, 127, 0.2);
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    box-shadow: 0 0 15px rgba(0, 255, 127, 0.1);
+}
+
+.avatar-large {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 2px solid #00ff7f;
+    margin-bottom: 1rem;
+}
+
+#updateProfileForm {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    text-align: left;
+}
+
+#updateProfileForm textarea {
+    background: #1b1b1b;
+    border: 1px solid rgba(0, 255, 127, 0.3);
+    border-radius: 8px;
+    padding: 10px;
+    color: #e0e0e0;
+}
